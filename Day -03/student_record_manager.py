@@ -27,4 +27,3 @@ display_data()
 else:
 print("Invalid input")
 
-is code ka poster generate 9:16 krdo vs code style me
