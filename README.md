@@ -1,34 +1,13 @@
-# Day 4 - Lambda Functions, Map, Filter & Reduce
+# 🚀 30 Days Python Challenge
 
-This is Day 4 of my **30 Days Python Challenge**.
+Welcome to my **30 Days Python Challenge**!
 
-## 📚 Topics Covered
-- Lambda Functions
-- map()
-- filter()
-- reduce()
-- enumerate()
+I'm documenting my daily Python learning journey by completing tutorials, building practice projects, and uploading the code every day.
 
-## 💻 Programs
+## 🎯 Goal
 
-### 1. Expected Salary Filter
-A Python program that filters companies based on the user's expected salary using **Lambda**, **Filter**, and **Enumerate**.
-
-### 2. Item Cost Calculator
-A product billing system that:
-- Stores product details
-- Calculates total cost using **map()**
-- Filters expensive items using **filter()**
-- Calculates the grand total using **reduce()**
-- Displays all products using **enumerate()**
-
-## 🚀 Concepts Practiced
-- Functional Programming
-- Lambda Expressions
-- List Processing
-- Data Filtering
-- Cost Calculation
-
----
-
-⭐ Day 4 Complete!
+- Learn Python from basics to advanced
+- Build consistency by coding every day
+- Upload daily projects on GitHub
+- Improve problem-solving skills
+- Create a strong programming portfolio
