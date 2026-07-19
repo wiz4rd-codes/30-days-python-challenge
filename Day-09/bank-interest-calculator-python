@@ -1,0 +1,29 @@
+class BankAccount : 
+    def __init__(self,name,num,balance):
+         self.name = name 
+         self.acc_num = num
+         self.balance = balance
+    def display(self):
+        print(f"Account Holder : {self.name}")
+        print(f"Account Number : {self.acc_num}")
+        print(f"Balance : {self.balance}")
+    @staticmethod
+    def calculate_interest(balance):
+         if(balance<=50000):
+              return balance*0.04
+         elif(balance>50000 and balance <= 200000):
+              return balance*0.06
+         else:
+              return balance*0.08
+n_acc = int(input("How many account you want to enter : "))
+accounts = []
+for i in range (0,n_acc):
+     name = input("Enter name of the account holder : ")        
+     num = int(input("Enter account number : "))
+     balance = int(input("Enter balance : "))
+     account = BankAccount(name,num,balance) 
+     accounts.append(account)
+for i,account in enumerate(accounts,start = 1) :   
+     print(f"Account number : {i}")
+     account.display()
+     print(f"Interest : {BankAccount.calculate_interest(account.balance)}")
