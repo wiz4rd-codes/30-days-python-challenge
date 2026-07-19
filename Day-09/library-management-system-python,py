@@ -1,0 +1,28 @@
+class Library : 
+    def __init__(self,num_book,books):
+        self.no_books = num_book
+        self.books = books
+    def length(self):
+        if(len(self.books)== self.no_books):
+            print("length of list of book is equal to number of book")
+        else : 
+            print("There is an Error !!!\nNumber of book is not equal to length of list of books ")
+
+    def display(self):
+        print(f"Total number of book : {self.no_books}")
+        for  i,book in enumerate(self.books, start = 1):
+            print(f"Book number {i} : {book}")
+libraries = []   
+n_lib = int(input("How many library you want to created : "))
+for i in range(0,n_lib):
+    books = []
+    num_book = int(input(f"Enter number of books  you want to add in library {i+1} : "))
+    for i in range(0,num_book):
+        book = input("Enter name of the book : ")
+        books.append(book)
+    library = Library(num_book,books)
+    libraries.append(library)
+for i,library in enumerate(libraries, start = 1):
+    print(f"Library number : {i}")
+    library.length()
+    library.display()
