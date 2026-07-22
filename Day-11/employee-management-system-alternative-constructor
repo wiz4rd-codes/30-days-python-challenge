@@ -1,0 +1,34 @@
+   class Employee:
+    def __init__(self, name, department, salary):
+        self.name = name
+        self.department = department
+        self.salary = salary
+
+    def display(self):
+        print(f"Name : {self.name}")
+        print(f"Department : {self.department}")
+        print(f"Salary : {self.salary}")
+
+    @classmethod
+    def from_string(cls, data):
+        details = data.split(",")
+        return cls(details[0], details[1], int(details[2]))
+
+
+no_ep = int(input("How many employees do you want to enter : "))
+
+employees = []
+
+for i in range(no_ep):
+    data = input(
+        'Enter employee details in the format "Name,Department,Salary" :\n'
+    )
+    employee = Employee.from_string(data)
+    employees.append(employee)
+
+print("\nEmployee Records\n")
+
+for i, employee in enumerate(employees, start=1):
+    print(f"Employee Number : {i}")
+    employee.display()
+    print()
