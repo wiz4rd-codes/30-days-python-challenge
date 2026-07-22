@@ -1,33 +1,35 @@
-class Vehicle : 
-    def __init__(self,brand,model,price):
-        self.brand = brand
-        self.model = model 
-        self.price = price 
+class OnlineCourse : 
+    platform_fee = 499
+    def __init__(self,course_name,instructor_name,course_price):
+        self.course_name = course_name
+        self.instructor_name = instructor_name
+        self.course_price = course_price
     def display(self):
-        print(f"Brand Name : {self.brand}")
-        print(f"Model : {self.model}")
-        print(f"Price : {self.price}")
-class Car(Vehicle):
-    def __init__(self,brand,model,price,fuel_type,seating_capacity):
-        super().__init__(brand,model,price)
-        self.fuel_type = fuel_type
-        self.seating_capacity = seating_capacity
-    def display(self):
-        super().display()
-        print(f"Fuel Type : {self.fuel_type}")
-        print(f"Seating Capacity : {self.seating_capacity}\n")
-no_car = int(input("Hoe many cars do you want to enter : "))
-cars = []
-for i in range (0,no_car):
-    brand = input(f"Brand Name : ")
-    model = input(f"Model : ")
-    price = int(input(f"Price : "))
-    fuel_type = input(f"Fuel Type : ")
-    seating_capacity = int(input(f"Seating Capacity : "))
-
-    car = Car(brand,model,price,fuel_type,seating_capacity)
-    cars.append(car)
-
-for i,car in enumerate(cars,start = 1):
-    print("\nCar NUmber : ",i)
-    car.display()
+        print(f"Course Name : {self.course_name}")
+        print(f"Instructor Name : {self.instructor_name}")
+        print(f"Course Price : {self.course_price}")
+        print(f"Platform Fee : {self.platform_fee}")
+        print("Total Price : ",(self.course_price) + (self.platform_fee))
+    @classmethod
+    def update_platform_fee(cls,new_pfee):
+        cls.platform_fee = new_pfee
+no = int(input("How many couses you want to enter : "))
+courses = []
+for i in range (0,no):
+    course_name = input("Enter Course Name : ")
+    instructor_name = input("Enter Instructor Name : ")
+    course_price = int(input("Enter Course Price : "))
+    
+    course = OnlineCourse(course_name,instructor_name,course_price)
+    courses.append(course)
+for i,course in enumerate(courses,start = 1):
+    print("Course Number : ",i)
+    course.display()
+fee_change = input("Do you want to update Platfor Fee : ")
+if(fee_change.capitalize() == "Yes"):
+    new_pfee = int(input("Enter new Platform Fee : "))
+    OnlineCourse.update_platform_fee(new_pfee)
+    print("Updated Data : ")
+    for i,course in enumerate(courses,start = 1):
+        print("Course Number : ",i)
+        course.display()
